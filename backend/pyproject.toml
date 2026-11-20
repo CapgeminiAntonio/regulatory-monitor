@@ -1,0 +1,24 @@
+[project]
+name = "regulatory-monitor"
+version = "0.1.0"
+description = "Watches regulatory feeds, summarizes changes with Claude, and maps them to client policies."
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic>=1.0",
+    "fastapi>=0.115",
+    "uvicorn>=0.32",
+    "sqlmodel>=0.0.22",
+    "pydantic-settings>=2.6",
+    "httpx>=0.27",
+    "feedparser>=6.0",
+    "trafilatura>=1.12",
+    "apscheduler>=3.10,<4",
+    "fpdf2>=2.8",
+]
+
+[dependency-groups]
+dev = ["pytest>=8", "respx>=0.21"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
